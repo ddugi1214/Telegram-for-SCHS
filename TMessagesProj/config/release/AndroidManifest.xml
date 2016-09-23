@@ -24,7 +24,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/AppName"
         android:theme="@style/Theme.TMessages.Start"
-        android:name="xyz.telegram.messenger.ApplicationLoader"
+        android:name="xyz.bluelemon.tfctalk.ApplicationLoader"
         android:hardwareAccelerated="@bool/useHardwareAcceleration"
         android:largeHeap="true">
 
@@ -43,21 +43,21 @@
             </intent-filter>
         </receiver>
         <service
-            android:name="xyz.telegram.messenger.GcmPushListenerService"
+            android:name="xyz.bluelemon.tfctalk.GcmPushListenerService"
             android:exported="false" >
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
             </intent-filter>
         </service>
         <service
-            android:name="xyz.telegram.messenger.GcmInstanceIDListenerService"
+            android:name="xyz.bluelemon.tfctalk.GcmInstanceIDListenerService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.android.gms.iid.InstanceID" />
             </intent-filter>
         </service>
         <service
-            android:name="xyz.telegram.messenger.GcmRegistrationIntentService"
+            android:name="xyz.bluelemon.tfctalk.GcmRegistrationIntentService"
             android:exported="false">
         </service>
 

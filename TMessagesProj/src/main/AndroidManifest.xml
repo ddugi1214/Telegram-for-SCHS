@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="xyz.telegram.messenger"
+    package="xyz.bluelemon.tfctalk"
     android:installLocation="auto">
 
     <supports-screens android:anyDensity="true"
@@ -45,16 +45,16 @@
     <!--<uses-permission android:name="android.permission.CAMERA" />-->
 
     <application
-        android:name="xyz.telegram.messenger.ApplicationLoader"
+        android:name="xyz.bluelemon.tfctalk.ApplicationLoader"
         android:allowBackup="false"
         android:hardwareAccelerated="@bool/useHardwareAcceleration"
         android:icon="@drawable/ic_launcher"
         android:largeHeap="true"
         android:theme="@style/Theme.TMessages.Start"
-        android:manageSpaceActivity="xyz.telegram.ui.ManageSpaceActivity">
+        android:manageSpaceActivity="xyz.bluelemon.ui.ManageSpaceActivity">
 
         <activity
-            android:name="xyz.telegram.ui.LaunchActivity"
+            android:name="xyz.bluelemon.ui.LaunchActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:hardwareAccelerated="@bool/useHardwareAcceleration"
             android:launchMode="singleTask"
@@ -117,23 +117,23 @@
             <meta-data android:name="android.service.chooser.chooser_target_service" android:value=".TgChooserTargetService" />
         </activity>
         <activity
-            android:name="xyz.telegram.ui.ManageSpaceActivity"
+            android:name="xyz.bluelemon.ui.ManageSpaceActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:hardwareAccelerated="@bool/useHardwareAcceleration"
             android:launchMode="singleTask"
             android:windowSoftInputMode="adjustPan">
         </activity>
         <activity
-            android:name="xyz.telegram.ui.IntroActivity"
+            android:name="xyz.bluelemon.ui.IntroActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize">
         </activity>
         <activity
-            android:name="xyz.telegram.messenger.OpenChatReceiver"
+            android:name="xyz.bluelemon.tfctalk.OpenChatReceiver"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:exported="true">
         </activity>
         <activity
-            android:name="xyz.telegram.ui.PopupNotificationActivity"
+            android:name="xyz.bluelemon.ui.PopupNotificationActivity"
             android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:excludeFromRecents="true"
             android:launchMode="singleTask"
@@ -143,7 +143,7 @@
         </activity>
 
         <receiver
-            android:name="xyz.telegram.messenger.AutoMessageHeardReceiver"
+            android:name="xyz.bluelemon.tfctalk.AutoMessageHeardReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="org.telegram.messenger.ACTION_MESSAGE_HEARD"/>
@@ -151,26 +151,26 @@
         </receiver>
 
         <receiver
-            android:name="xyz.telegram.messenger.AutoMessageReplyReceiver"
+            android:name="xyz.bluelemon.tfctalk.AutoMessageReplyReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="org.telegram.messenger.ACTION_MESSAGE_REPLY"/>
             </intent-filter>
         </receiver>
 
-        <receiver android:name="xyz.telegram.messenger.CallReceiver" >
+        <receiver android:name="xyz.bluelemon.tfctalk.CallReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.PHONE_STATE" />
             </intent-filter>
         </receiver>
 
-        <receiver android:name="xyz.telegram.messenger.SmsListener">
+        <receiver android:name="xyz.bluelemon.tfctalk.SmsListener">
             <intent-filter>
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />
             </intent-filter>
         </receiver>
 
-        <service android:name="xyz.telegram.messenger.AuthenticatorService" android:exported="true">
+        <service android:name="xyz.bluelemon.tfctalk.AuthenticatorService" android:exported="true">
             <intent-filter>
                 <action android:name="android.accounts.AccountAuthenticator"/>
             </intent-filter>
@@ -178,7 +178,7 @@
                 android:resource="@xml/auth"/>
         </service>
 
-        <service android:name="xyz.telegram.messenger.ContactsSyncAdapterService" android:exported="true">
+        <service android:name="xyz.bluelemon.tfctalk.ContactsSyncAdapterService" android:exported="true">
             <intent-filter>
                 <action android:name="android.content.SyncAdapter" />
             </intent-filter>
@@ -189,7 +189,7 @@
         </service>
 
         <service
-            android:name="xyz.telegram.messenger.TgChooserTargetService"
+            android:name="xyz.bluelemon.tfctalk.TgChooserTargetService"
             android:label="@string/AppName"
             android:permission="android.permission.BIND_CHOOSER_TARGET_SERVICE">
             <intent-filter>
@@ -197,18 +197,18 @@
             </intent-filter>
         </service>
 
-        <service android:name="xyz.telegram.messenger.NotificationsService" android:enabled="true"/>
-        <service android:name="xyz.telegram.messenger.NotificationRepeat" android:exported="false"/>
-        <service android:name="xyz.telegram.messenger.ClearCacheService" android:exported="false"/>
-        <service android:name="xyz.telegram.messenger.VideoEncodingService" android:enabled="true"/>
-        <service android:name="xyz.telegram.messenger.MusicPlayerService" android:exported="true" android:enabled="true"/>
-        <service android:name="xyz.telegram.messenger.MusicBrowserService" android:exported="true">
+        <service android:name="xyz.bluelemon.tfctalk.NotificationsService" android:enabled="true"/>
+        <service android:name="xyz.bluelemon.tfctalk.NotificationRepeat" android:exported="false"/>
+        <service android:name="xyz.bluelemon.tfctalk.ClearCacheService" android:exported="false"/>
+        <service android:name="xyz.bluelemon.tfctalk.VideoEncodingService" android:enabled="true"/>
+        <service android:name="xyz.bluelemon.tfctalk.MusicPlayerService" android:exported="true" android:enabled="true"/>
+        <service android:name="xyz.bluelemon.tfctalk.MusicBrowserService" android:exported="true">
             <intent-filter>
                 <action android:name="android.media.browse.MediaBrowserService"/>
             </intent-filter>
         </service>
 
-        <receiver android:name="xyz.telegram.messenger.MusicPlayerReceiver" >
+        <receiver android:name="xyz.bluelemon.tfctalk.MusicPlayerReceiver" >
             <intent-filter>
                 <action android:name="org.telegram.android.musicplayer.close" />
                 <action android:name="org.telegram.android.musicplayer.pause" />
@@ -220,18 +220,18 @@
             </intent-filter>
         </receiver>
 
-        <receiver android:name="xyz.telegram.messenger.AppStartReceiver" android:enabled="true">
+        <receiver android:name="xyz.bluelemon.tfctalk.AppStartReceiver" android:enabled="true">
             <intent-filter>
                 <action android:name="org.telegram.start" />
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
 
-        <receiver android:name="xyz.telegram.messenger.WearReplyReceiver" android:enabled="true"/>
+        <receiver android:name="xyz.bluelemon.tfctalk.WearReplyReceiver" android:enabled="true"/>
 
-        <receiver android:name="xyz.telegram.messenger.ShareBroadcastReceiver" android:enabled="true"/>
+        <receiver android:name="xyz.bluelemon.tfctalk.ShareBroadcastReceiver" android:enabled="true"/>
 
-        <receiver android:name="xyz.telegram.messenger.NotificationDismissReceiver" android:exported="false"/>
+        <receiver android:name="xyz.bluelemon.tfctalk.NotificationDismissReceiver" android:exported="false"/>
 
         <uses-library android:name="com.sec.android.app.multiwindow" android:required="false" />
         <meta-data android:name="com.sec.android.support.multiwindow" android:value="true" />

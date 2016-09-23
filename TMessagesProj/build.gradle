@@ -17,7 +17,7 @@ android {
     buildToolsVersion '23.0.3'
 
     useLibrary 'org.apache.http.legacy'
-    defaultConfig.applicationId = "xyz.bluelemon.teleschs"
+    defaultConfig.applicationId = "xyz.bluelemon.tfctalk"
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_7
